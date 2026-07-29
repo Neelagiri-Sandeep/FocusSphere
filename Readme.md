@@ -1,90 +1,195 @@
 # 🚀 FocusSphere
 
-FocusSphere is a full-stack student productivity web application built using the MERN stack. It helps users manage daily tasks, organize notes, schedule activities, improve focus using a Pomodoro timer, and stay productive through a modern, responsive interface.
+<div align="center">
+
+# 📚 FocusSphere
+
+### A Full-Stack Student Productivity Web Application built with the MERN Stack
+
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-22-green?style=for-the-badge&logo=node.js)
+![Express.js](https://img.shields.io/badge/Express.js-Backend-black?style=for-the-badge&logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?style=for-the-badge&logo=mongodb)
+![JWT](https://img.shields.io/badge/JWT-Authentication-red?style=for-the-badge)
+![Vite](https://img.shields.io/badge/Vite-Frontend-purple?style=for-the-badge&logo=vite)
+
+</div>
 
 ---
 
-## ✨ Features
+# 📖 About The Project
 
-- 🔐 Secure User Authentication (JWT)
-- 👤 User Registration & Login
-- 🔑 Forgot Password with OTP Verification
-- 📝 Task Management (Create, Edit, Delete)
-- ✅ Task Completion Tracking
-- 🔍 Search, Filter & Sort Tasks
-- 📅 Calendar
-- 📒 Notes Management
-- 🍅 Pomodoro Timer
-- 👤 User Profile
-- 🌙 Dark Mode
-- 📱 Responsive Design
+FocusSphere is a Full-Stack Student Productivity Platform developed using the MERN Stack.
+
+The application helps students organize their academic life by managing tasks, taking notes, scheduling events, tracking productivity with a Pomodoro timer, and securely managing their accounts using JWT Authentication and OTP-based password recovery.
 
 ---
 
-## 🛠 Tech Stack
+# ✨ Features
 
-### Frontend
-- React.js
-- Vite
-- CSS
-- Axios
+## 👤 User Module
 
-### Backend
-- Node.js
-- Express.js
-
-### Database
-- MongoDB Atlas
-- Mongoose
-
-### Authentication
-- JWT
-- bcrypt
-- Nodemailer (OTP)
+- User Registration
+- Secure Login
+- Logout
+- JWT Authentication
+- Protected Routes
+- Profile Management
+- Forgot Password
+- OTP Verification
+- Reset Password
 
 ---
 
-## 📂 Project Structure
+## ✅ Task Management
 
-```
-FocusSphere
+- Create Tasks
+- Edit Tasks
+- Delete Tasks
+- Mark Tasks as Completed
+- Search Tasks
+- Filter Tasks
+- Sort Tasks
+- Task Statistics
+
+---
+
+## 📚 Productivity Features
+
+- Notes Management
+- Calendar
+- Pomodoro Timer
+- Productivity Dashboard
+- Task Progress Tracking
+- Daily Task Reminders
+- Dark Mode
+
+---
+
+## 🔒 Security
+
+- JWT Authentication
+- Password Hashing using bcrypt
+- Protected API Routes
+- OTP Verification
+- Secure Password Reset
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| React.js | Frontend |
+| Vite | Frontend Build Tool |
+| CSS3 | Styling |
+| Axios | API Calls |
+| Node.js | Backend |
+| Express.js | REST API |
+| MongoDB Atlas | Database |
+| Mongoose | ODM |
+| JWT | Authentication |
+| bcrypt | Password Encryption |
+| Nodemailer | OTP Email Service |
+| Git & GitHub | Version Control |
+
+---
+
+# 📂 Project Structure
+
+```text
+FocusSphere/
 │
-├── client
-├── server
+├── client/
+├── server/
+├── screenshots/
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
-
-### Clone Repository
+# 🚀 Installation
 
 ```bash
 git clone https://github.com/Neelagiri-Sandeep/FocusSphere.git
-```
 
-### Install Frontend
+cd FocusSphere
 
-```bash
+# Frontend
 cd client
 npm install
 npm run dev
-```
 
-### Install Backend
-
-```bash
-cd server
+# Backend
+cd ../server
 npm install
 npm start
 ```
 
 ---
 
-## 👨‍💻 Author
+# 📸 Screenshots
 
-**Neelagiri Sandeep**
+- Login Page
+- Register Page
+- Dashboard
+- Task Management
+- Calendar
+- Notes
+- Pomodoro Timer
+- Profile
+- Dark Mode
+
+---
+
+# 🔐 Authentication
+
+- JWT Login
+- User Registration
+- Forgot Password
+- OTP Verification
+- Password Reset
+- Protected Routes
+
+---
+
+# 📈 Future Enhancements
+
+- AI Study Assistant
+- Task Analytics Charts
+- Email Notifications
+- Mobile Application
+- Team Collaboration
+- File Attachments
+
+---
+
+# 👨‍💻 Developer
+
+## Neelagiri Sandeep
 
 GitHub:
+
 https://github.com/Neelagiri-Sandeep
+
+---
+
+# ⭐ Support
+
+If you like this project,
+
+⭐ Star this repository
+
+and
+
+🚀 Share it with others.
+
+---
+
+<div align="center">
+
+## ❤️ Thank You for Visiting
+
+Made with ❤️ using the MERN Stack
+
+</div>
