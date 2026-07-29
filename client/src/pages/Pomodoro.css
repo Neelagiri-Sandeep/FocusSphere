@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===========================================================
+   Design Tokens (matches Dashboard.css / Calendar.css / Notes.css)
+=========================================================== */
+
+.pomodoro-page {
+  --bg: #f5f6fb;
+  --surface: #ffffff;
+  --surface-muted: #f0f1f8;
+  --border: #e4e6f1;
+
+  --ink-900: #1d2030;
+  --ink-700: #363a4d;
+  --ink-500: #6b6f85;
+  --ink-400: #9a9db0;
+
+  --brand-600: #4f46e5;
+  --brand-700: #4338ca;
+  --brand-100: #eef0ff;
+  --brand-glow: rgba(79, 70, 229, 0.25);
+
+  --danger: #ef4444;
+  --danger-bg: #fef2f2;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  --success: #10b981;
+  --success-bg: #ecfdf5;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+
+  --shadow-sm: 0 2px 8px rgba(29, 32, 48, 0.06);
+  --shadow-md: 0 10px 30px rgba(29, 32, 48, 0.08);
+  --shadow-lg: 0 20px 45px rgba(67, 56, 202, 0.16);
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg);
+  padding: 26px;
+  font-family: var(--font-body);
+  color: var(--ink-900);
+  box-sizing: border-box;
+}
+
+.pomodoro-page *,
+.pomodoro-page *::before,
+.pomodoro-page *::after {
+  box-sizing: border-box;
+}
+
+.pomodoro-page h1,
+.pomodoro-page h2,
+.pomodoro-page h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ===========================================================
+   Layout
+=========================================================== */
+
+.pomodoro-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  min-height: calc(100vh - 52px);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===========================================================
+   Sidebar (matches Dashboard.css / Calendar.css / Notes.css)
+=========================================================== */
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: linear-gradient(165deg, #4338ca 0%, #4f46e5 52%, #6d5bf0 100%);
+  color: white;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 26px;
+}
+
+.sidebar-logo {
+  margin-bottom: 26px;
+  padding: 0 10px;
+}
+
+.sidebar-logo h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.sidebar-logo p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-link-icon {
+  display: flex;
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+.sidebar-link-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  transform: translateX(2px);
+}
+
+.sidebar-link--active {
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+/* ===========================================================
+   Header
+=========================================================== */
+
+.pomodoro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.pomodoro-title h1 {
+  font-size: 28px;
+  color: var(--ink-900);
+  margin-bottom: 6px;
+}
+
+.pomodoro-title p {
+  color: var(--ink-500);
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-back,
+.btn-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-body);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-back svg,
+.btn-profile svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-back {
+  background: var(--surface-muted);
+  color: var(--ink-700);
+  border: 1px solid var(--border);
+}
+
+.btn-back:hover {
+  background: var(--border);
+  transform: translateY(-2px);
+}
+
+.btn-profile {
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+
+.btn-profile:hover {
+  background: #e0e3ff;
+  transform: translateY(-2px);
+}
+
+/* ===========================================================
+   Content Grid
+=========================================================== */
+
+.pomodoro-content {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  height: fit-content;
+  transition: box-shadow 0.25s ease;
+}
+
+.card h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 18px;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ===========================================================
+   Timer Card
+=========================================================== */
+
+.timer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.timer-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+
+.status-badge--idle {
+  background: var(--surface-muted);
+  color: var(--ink-500);
+}
+
+.status-badge--running {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status-badge--paused {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.timer-ring-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+}
+
+.timer-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timer-ring-track {
+  fill: none;
+  stroke: var(--surface-muted);
+  stroke-width: 16;
+}
+
+.timer-ring-progress {
+  fill: none;
+  stroke: var(--brand-600);
+  stroke-width: 16;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.timer-time {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--ink-900);
+  letter-spacing: -0.02em;
+}
+
+.timer-label {
+  font-size: 13px;
+  color: var(--ink-500);
+  font-weight: 500;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 13px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: var(--font-body);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-control svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-control--start {
+  background: var(--brand-600);
+  color: white;
+}
+
+.btn-control--start:hover {
+  background: var(--brand-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px var(--brand-glow);
+}
+
+.btn-control--pause {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.btn-control--pause:hover {
+  background: #fef3c7;
+  transform: translateY(-2px);
+}
+
+.btn-control--reset {
+  background: var(--surface-muted);
+  color: var(--ink-700);
+}
+
+.btn-control--reset:hover {
+  background: var(--border);
+  transform: translateY(-2px);
+}
+
+.preset-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 12px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink-700);
+  transition: 0.25s ease;
+}
+
+.preset-card svg {
+  width: 22px;
+  height: 22px;
+  color: var(--brand-600);
+  transition: 0.25s ease;
+  margin-bottom: 4px;
+}
+
+.preset-caption {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.preset-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand-100);
+}
+
+.preset-card--active {
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+  color: white;
+}
+
+.preset-card--active svg {
+  color: white;
+}
+
+.preset-card--active .preset-caption {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===========================================================
+   Stats Card
+=========================================================== */
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stat-row:first-of-type {
+  padding-top: 0;
+}
+
+.stat-row-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-row-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-row-icon--sessions {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.stat-row-icon--status {
+  background: var(--brand-100);
+  color: var(--brand-600);
+}
+
+.stat-row-icon--focus {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.stat-row h3 {
+  font-size: 18px;
+  color: var(--ink-900);
+  line-height: 1.2;
+}
+
+.stat-row p {
+  color: var(--ink-500);
+  font-size: 12.5px;
+  margin: 2px 0 0;
+}
+
+/* ===========================================================
+   Quote Card
+=========================================================== */
+
+.quote-card {
+  background: linear-gradient(155deg, #4338ca 0%, #4f46e5 55%, #6d5bf0 100%);
+  color: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-card svg {
+  width: 26px;
+  height: 26px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.quote-card p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===========================================================
+   Responsive
+=========================================================== */
+
+@media (max-width: 1100px) {
+  .pomodoro-content {
+    grid-template-columns: 1fr 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pomodoro-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 0;
+    padding: 0 12px 0 0;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+  }
+
+  .sidebar-link span:last-child {
+    display: none;
+  }
+
+  .sidebar-link {
+    padding: 10px;
+  }
+
+  .pomodoro-content {
+    grid-template-columns: 1fr;
+  }
+
+  .side-column {
+    flex-direction: row;
+  }
+
+  .side-column .card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .side-column {
+    flex-direction: column;
+  }
+
+  .timer-ring-wrap {
+    width: 260px;
+    height: 260px;
+  }
+
+  .timer-time {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pomodoro-page {
+    padding: 14px;
+  }
+
+  .pomodoro-title h1 {
+    font-size: 22px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .btn-back,
+  .btn-profile {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .btn-back span,
+  .btn-profile span {
+    display: none;
+  }
+
+  .timer-ring-wrap {
+    width: 220px;
+    height: 220px;
+  }
+
+  .timer-time {
+    font-size: 36px;
+  }
+
+  .btn-control span {
+    display: none;
+  }
+
+  .btn-control {
+    padding: 13px 16px;
+  }
+
+  .preset-cards {
+    grid-template-columns: 1fr;
+  }
+}
