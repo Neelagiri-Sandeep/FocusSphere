@@ -25,6 +25,18 @@ The application helps students organize their academic life by managing tasks, t
 
 ---
 
+# 🌐 Live Demo
+
+### 🚀 Frontend (Vercel)
+
+https://focus-sphere-eight.vercel.app/
+
+### ⚙️ Backend API (Render)
+
+https://focussphere-uppl.onrender.com/
+
+---
+
 # ✨ Features
 
 ## 👤 User Module
@@ -169,27 +181,3 @@ npm start
 ## Neelagiri Sandeep
 
 GitHub:
-
-https://github.com/Neelagiri-Sandeep
-
----
-
-# ⭐ Support
-
-If you like this project,
-
-⭐ Star this repository
-
-and
-
-🚀 Share it with others.
-
----
-
-<div align="center">
-
-## ❤️ Thank You for Visiting
-
-Made with ❤️ using the MERN Stack
-
-</div>
