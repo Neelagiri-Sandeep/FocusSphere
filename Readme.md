@@ -181,3 +181,27 @@ npm start
 ## Neelagiri Sandeep
 
 GitHub:
+
+https://github.com/Neelagiri-Sandeep
+
+---
+
+# ⭐ Support
+
+If you like this project,
+
+⭐ Star this repository
+
+and
+
+🚀 Share it with others.
+
+---
+
+<div align="center">
+
+## ❤️ Thank You for Visiting
+
+Made with ❤️ using the MERN Stack
+
+</div>
