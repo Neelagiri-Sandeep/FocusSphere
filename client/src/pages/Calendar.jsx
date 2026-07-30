@@ -110,8 +110,8 @@ function CalendarPage() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:5000/tasks", {
-        headers: {
+const response = await axios.get("https://focussphere-uppl.onrender.com/tasks", {
+          headers: {
           Authorization: token,
         },
       });
@@ -125,7 +125,7 @@ function CalendarPage() {
   const toggleComplete = async (task) => {
     try {
       await axios.put(
-        `http://127.0.0.1:5000/tasks/${task._id}`,
+        `https://focussphere-uppl.onrender.com/tasks/${task._id}`,
         {
           ...task,
           completed: !task.completed,

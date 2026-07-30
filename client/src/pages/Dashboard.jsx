@@ -176,7 +176,7 @@ function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:5000/tasks", {
+      const response = await axios.get("https://focussphere-uppl.onrender.com/tasks", {
         headers: {
           Authorization: token,
         },
@@ -221,7 +221,7 @@ function Dashboard() {
   const addTask = async () => {
     try {
       await axios.post(
-        "http://127.0.0.1:5000/tasks",
+        "https://focussphere-uppl.onrender.com/tasks",
         {
           title,
           description,
@@ -275,7 +275,7 @@ function Dashboard() {
   const updateTask = async () => {
     try {
       await axios.put(
-        `http://127.0.0.1:5000/tasks/${editingId}`,
+        `https://focussphere-uppl.onrender.com/tasks/${editingId}`,
         {
           title,
           description,
@@ -310,7 +310,7 @@ function Dashboard() {
   const toggleComplete = async (task) => {
     try {
       await axios.put(
-        `http://127.0.0.1:5000/tasks/${task._id}`,
+        `https://focussphere-uppl.onrender.com/tasks/${task._id}`,
         {
           ...task,
           completed: !task.completed,
@@ -330,8 +330,8 @@ function Dashboard() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/tasks/${id}`, {
-        headers: {
+      await axios.delete(`https://focussphere-uppl.onrender.com/tasks/${id}`, {
+                headers: {
           Authorization: token,
         },
       });

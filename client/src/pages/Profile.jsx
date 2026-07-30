@@ -164,10 +164,10 @@ function Profile() {
   const fetchQuickStats = async () => {
     try {
       const [tasksResponse, notesResponse] = await Promise.all([
-        axios.get("http://127.0.0.1:5000/tasks", {
+        axios.get("https://focussphere-uppl.onrender.com/tasks", {
           headers: { Authorization: token },
         }),
-        axios.get("http://127.0.0.1:5000/notes", {
+        axios.get("https://focussphere-uppl.onrender.com/notes", {
           headers: { Authorization: token },
         }),
       ]);
@@ -188,7 +188,7 @@ function Profile() {
   const updateProfile = async () => {
     try {
       const response = await axios.put(
-        "http://127.0.0.1:5000/profile",
+        "https://focussphere-uppl.onrender.com/profile",
         {
           name,
         },
@@ -210,7 +210,7 @@ function Profile() {
   const changePassword = async () => {
     try {
       const response = await axios.put(
-        "http://127.0.0.1:5000/change-password",
+        "https://focussphere-uppl.onrender.com/change-password",
         {
           currentPassword,
           newPassword,

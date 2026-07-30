@@ -126,7 +126,7 @@ function Notes() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://127.0.0.1:5000/notes", {
+      const response = await axios.get("https://focussphere-uppl.onrender.com/notes", {
         headers: {
           Authorization: token,
         },
@@ -148,7 +148,7 @@ function Notes() {
 
       if (editingId) {
         await axios.put(
-          `http://127.0.0.1:5000/notes/${editingId}`,
+          `https://focussphere-uppl.onrender.com/notes/${editingId}`,
           {
             title,
             content,
@@ -163,7 +163,7 @@ function Notes() {
         setEditingId(null);
       } else {
         await axios.post(
-          "http://127.0.0.1:5000/notes",
+          "https://focussphere-uppl.onrender.com/notes",
           {
             title,
             content,
@@ -188,7 +188,7 @@ function Notes() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://127.0.0.1:5000/notes/${id}`, {
+      await axios.delete(`https://focussphere-uppl.onrender.com/notes/${id}`, {
         headers: {
           Authorization: token,
         },
