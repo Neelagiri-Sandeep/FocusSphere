@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Register from "./pages/register";
 import Dashboard from "./pages/Dashboard";
 import Notes from "./pages/Notes";
 import Pomodoro from "./pages/Pomodoro";
