@@ -16,7 +16,7 @@ function ForgetPassword() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/forgot-password",
+        "https://focussphere-uppl.onrender.com/forgot-password",
         { email }
       );
 

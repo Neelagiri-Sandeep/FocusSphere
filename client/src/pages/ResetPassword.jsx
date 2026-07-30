@@ -19,7 +19,7 @@ function ResetPassword() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/reset-password",
+        "https://focussphere-uppl.onrender.com/reset-password",
         {
           email,
           otp,

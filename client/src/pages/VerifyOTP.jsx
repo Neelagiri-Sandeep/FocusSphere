@@ -19,7 +19,7 @@ function VerifyOTP() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/verify-otp",
+        "https://focussphere-uppl.onrender.com/verify-otp",
         {
           email,
           otp,
